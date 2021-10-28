@@ -165,7 +165,7 @@ public class FormationServiceImpl implements FormationService {
 		try {
 			if (form_rep.findById(id_form).isPresent() /*&& centre_rep.findById(id_centre).isPresent()*/) {
 				Formation existForm = form_rep.findById(id_form).get();
-				existForm.setCentre(new Object());
+				existForm.setCentre(null);
 				form_rep.save(existForm);
 			} else {
 				return new ResponseEntity<>("Centre not found!", HttpStatus.NOT_FOUND);
