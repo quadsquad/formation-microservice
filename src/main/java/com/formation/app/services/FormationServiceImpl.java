@@ -136,7 +136,7 @@ public class FormationServiceImpl implements FormationService {
 	public ResponseEntity<?> deleteCFF(String id_form) {
 		if (form_rep.findById(id_form).isPresent()) {
 			Formation formation = form_rep.findById(id_form).get();
-			formation.setCentre(new Object());
+			formation.setCentre(null);
 			form_rep.save(formation);
 			return new ResponseEntity<>("Center deleted from formation", HttpStatus.OK);
 		} else {
